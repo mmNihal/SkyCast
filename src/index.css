@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* 1. Define design tokens via @theme */
+@theme {
+  /* Container tokens */
+  --container-center: initial; /* not used directly but placeholder */
+  --container-padding: 1.25rem;
+
+  /* Custom colors matching your v3 config */
+  --color-body: #1d1e28;
+  --color-light: #ffffff;
+}
+
+/* 3. Components layer: container + dark mode + responsive rules */
+@layer components {
+  .container {
+    @apply w-full mx-auto;
+    padding-inline: var(--container-padding);
+  }
+
+  /* Custom dark mode for .dark wrapper */
+  .dark {
+    @apply bg-[#171717] text-white;
+  }
+
+  /* Responsive container widths */
+  @screen sm {
+    .container {
+      max-width: 640px;
+    }
+  }
+  @screen md {
+    .container {
+      max-width: 768px;
+    }
+  }
+  @screen lg {
+    .container {
+      max-width: 1024px;
+    }
+  }
+  @screen xl {
+    .container {
+      max-width: 1280px;
+    }
+  }
+  @screen 2xl {
+    .container {
+      max-width: 1536px;
+    }
+  }
+}
+
+/* 4. Custom dark variant scoped to .dark class */
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+/* 5. Inject utility classes */
+/* @tailwind utilities; */
