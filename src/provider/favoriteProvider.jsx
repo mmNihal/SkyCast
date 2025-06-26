@@ -4,8 +4,6 @@ import { useLocalstorage } from "../hook/index";
 const FavoriteProvider = ({ children }) => {
   const [favorite, setFavorite] = useLocalstorage("favorite", []);
 
-  console.log(favorite);
-
   const addToFavorite = (latitude, longitude, location) => {
     setFavorite([
       ...favorite,
